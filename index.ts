@@ -55,7 +55,7 @@ export function getStorageApi(){
 
 // Cria uma instância servidor com express
 const serverApp: Express = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware para analisar o corpo da solicitação JSON
 serverApp.use(express.json());
@@ -115,8 +115,8 @@ serverApp.put("/api/mensagem", updateMensagem);
 serverApp.delete("/api/mensagem", deleteMensagem);
 
 // Prepara o servidor para iniciar na porta, ouvindo em todas as interfaces de rede disponíveis
-serverApp.listen(port, '0.0.0.0', () => {
-  console.log(`[Server]: I am running at http://localhost:${port}`);
+serverApp.listen(port, () => {
+  console.log(`[Server]: I am running at https://petloversweb.vercel.app`);
 });
 
 function authToken(req: any, res: any, next: any) {
@@ -129,18 +129,3 @@ function authToken(req: any, res: any, next: any) {
     return res.redirect('/login');
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

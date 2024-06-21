@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
       "target": "es2016",
-      "outDir": "./dist/server.js",
+      "outDir": "./dist",
       "module": "commonjs",
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,
       "strict": true,
       "skipLibCheck": true
-    }
+    },
+    "include": ["models", "endpoints"]
 }
